@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paket Mutfak</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="content">
+        <form id="form">
+          <div class="input">
+            <input type="text" id="restaurant-name" class="input__field" />
+            <label for="restaurant-name" class="input__label">Resoran Adı</label>
+          </div>
+          <div class="input">
+            <input type="text" id="restaurant-phone" class="input__field" placeholder="+90 (---) --- -- --" />
+            <label for="restaurant-phone" class="input__label">Resoran Telefon Numarası</label>
+          </div>
+          <div class="divider"></div>
+          <ul id="completed-list"></ul>
+
+          <div class="integration-container">
+            <!-- <p>Lütfen entegrasyon yapmak istediğiniz restoran yönetim panelini seçiniz.</p>
+            <ul class="list" id="list">
+              <li class="list__item">
+                <label for="getir">
+                  <input type="radio" id="getir" name="integration" checked />
+                  <div>
+                    <span></span>
+                    Getir
+                  </div>
+                </label>
+              </li>
+              <li class="list__item">
+                <label for="trendyol">
+                  <input type="radio" id="trendyol" name="integration" />
+                  <div>
+                    <span></span>
+                    Trendyol
+                  </div>
+                </label>
+              </li>
+              <li class="list__item">
+                <label for="yemek-sepeti">
+                  <input type="radio" id="yemek-sepeti" name="integration" />
+                  <div>
+                    <span></span>
+                    Yemek Sepeti
+                  </div>
+                </label>
+              </li>
+            </ul> -->
+          </div>
+          <div id="conditional-field">
+            <!-- <div class="input-wrapper">
+              <div class="input">
+                <input type="text" id="restaurant-name" class="input__field" placeholder="App Secret Key" />
+              </div>
+              <div class="input">
+                <input
+                  type="text"
+                  id="restaurant-secret-key"
+                  class="input__field"
+                  placeholder="Restaurant Secret Key"
+                />
+              </div>
+            </div> -->
+          </div>
+
+          <button type="submit" class="btn">Restoran Ekle</button>
+        </form>
+      </div>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
