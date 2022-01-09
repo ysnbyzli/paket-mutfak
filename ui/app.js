@@ -1,12 +1,9 @@
 const conditionalField = document.getElementById("conditional-field");
-const inputPassword = document.getElementById("password");
 const form = document.getElementById("form");
 const container = document.getElementsByClassName("integration-container")[0];
 const checkbox = document.getElementsByName("integration");
 const completedList = document.getElementById("completed-list");
 const button = document.getElementsByClassName("btn")[0];
-
-let visibility;
 
 const getirHtml = `
             <div class="input-wrapper">
@@ -94,12 +91,14 @@ const yemekSepetiHtml = `
 </div>
 `;
 
+// checkbox list data
 let data = [
   { restaurant: "Getir", id: "getir", checked: true },
   { restaurant: "Trendyol", id: "trendyol", checked: false },
   { restaurant: "Yemek Sepeti", id: "yemek-sepeti", checked: false },
 ];
 
+// check list html items
 const getContainerItems = () => {
   return (container.innerHTML =
     data.length > 0
@@ -138,6 +137,21 @@ const integrationsEvents = () => {
             break;
           case "yemek-sepeti":
             setConditionalFields(yemekSepetiHtml);
+            // Password show toggle
+            document.getElementById("visibility").addEventListener("click", (event) => {
+              const inputPassword = document.getElementById("password");
+              if (inputPassword.type === "password") {
+                inputPassword.type = "text";
+              } else {
+                inputPassword.type = "password";
+              }
+
+              if (event.target.innerHTML === "visibility") {
+                event.target.innerHTML = "visibility_off";
+              } else {
+                event.target.innerHTML = "visibility";
+              }
+            });
             break;
         }
       }
@@ -167,22 +181,22 @@ const setButtonClass = () => {
 };
 
 // TODO: password toggle visibilty
-if (visibility) {
-  console.log("geldi");
-  visibility.addEventListener("click", (event) => {
-    if (inputPassword.type === "password") {
-      inputPassword.type = "text";
-    } else {
-      inputPassword.type = "password";
-    }
+// if (visibility) {
+//   console.log("geldi");
+//   visibility.addEventListener("click", (event) => {
+//     if (inputPassword.type === "password") {
+//       inputPassword.type = "text";
+//     } else {
+//       inputPassword.type = "password";
+//     }
 
-    if (event.target.innerHTML === "visibility") {
-      event.target.innerHTML = "visibility_off";
-    } else {
-      event.target.innerHTML = "visibility";
-    }
-  });
-}
+//     if (event.target.innerHTML === "visibility") {
+//       event.target.innerHTML = "visibility_off";
+//     } else {
+//       event.target.innerHTML = "visibility";
+//     }
+//   });
+// }
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();

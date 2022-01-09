@@ -131,7 +131,7 @@ form {
 }
 
 .integration-container {
-  margin-top: -40px;
+  margin-top: -70px;
 }
 
 .integration-container p {
@@ -157,9 +157,13 @@ form {
   gap: 16px;
 }
 
+.integration-container .list__item {
+  width: 100%;
+}
+
 .integration-container .list__item label {
+  width: 100%;
   display: inline-block;
-  min-width: 192px;
   height: 48px;
   position: relative;
   cursor: pointer;
@@ -263,6 +267,10 @@ input[type="radio"]:checked + div span::after {
   border: 1px solid #85e3cd;
 }
 
+.btn-completed svg {
+  margin-right: 12px;
+}
+
 #completed-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -273,6 +281,7 @@ input[type="radio"]:checked + div span::after {
           flex-direction: column;
   gap: 16px;
   margin-top: -50px;
+  margin-bottom: 20px;
 }
 
 .completed {
