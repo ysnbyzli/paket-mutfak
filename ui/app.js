@@ -10,18 +10,20 @@ const getirHtml = `
               <div class="input">
                 <input
                   type="text"
-                  id="restaurant-name"
+                  id="app-secret-key"
                   class="input__field"
-                  placeholder="App Secret Key"
+                  placeholder=" "
                 />
+                <label for="app-secret-key" class="input__label">App Secret Key</label>
               </div>
               <div class="input">
                 <input
                   type="text"
                   id="restaurant-secret-key"
                   class="input__field"
-                  placeholder="Restaurant Secret Key"
+                  placeholder=" "
                 />
+                <label for="restaurant-secret-key" class="input__label">Restaurant Secret Key</label>
               </div>
             </div>
 `;
@@ -33,16 +35,18 @@ const trendyolHtml = `
                   type="text"
                   id="api-key"
                   class="input__field"
-                  placeholder="Api Key"
+                  placeholder=" "
                 />
+                <label for="api-key" class="input__label">Api Key</label>
               </div>
               <div class="input">
                 <input
                   type="text"
                   id="api-secret-key"
                   class="input__field"
-                  placeholder="Api Secret Key"
+                  placeholder=" "
                 />
+                <label for="api-secret-key" class="input__label">Api Secret Key</label>
               </div>
             </div>
             <div class="input">
@@ -50,8 +54,9 @@ const trendyolHtml = `
                 type="text"
                 id="supplier-id"
                 class="input__field"
-                placeholder="Supplier Id"
+                placeholder=" "
               />
+              <label for="supplier-id" class="input__label">Supplier Id</label>
             </div>
 `;
 
@@ -61,16 +66,18 @@ const yemekSepetiHtml = `
   type="text"
   id="username"
   class="input__field"
-  placeholder="Username"
+  placeholder=" "
 />
+<label for="username" class="input__label">Username</label>
 </div>
 <div class="input">
 <input
   type="password"
   id="password"
   class="input__field"
-  placeholder="Password"
+  placeholder=" "
 />
+<label for="password" class="input__label">Password</label>
 <i class="material-icons" id="visibility">visibility</i>
 </div>
 <div class="input-wrapper">
@@ -78,27 +85,31 @@ const yemekSepetiHtml = `
   <input
     type="text"
     class="input__field"
-    placeholder="App Secret Key"
+    id="app-secret-key"
+    placeholder=" "
   />
+  <label for="app-secret-key" class="input__label">App Secret Key</label>
 </div>
 <div class="input">
   <input
     type="text"
     class="input__field"
-    placeholder="Restaurant Secret Key"
+    id="restaurant-secret-key"
+    placeholder=" "
   />
+  <label for="restaurant-secret-key" class="input__label">Restaurant Secret Key</label>
 </div>
 </div>
 `;
 
-// checkbox list data
+// firmaların bulunduğu array
 let data = [
   { restaurant: "Getir", id: "getir", checked: true },
   { restaurant: "Trendyol", id: "trendyol", checked: false },
   { restaurant: "Yemek Sepeti", id: "yemek-sepeti", checked: false },
 ];
 
-// check list html items
+// sayfada firmaların listelenmesi
 const getContainerItems = () => {
   return (container.innerHTML =
     data.length > 0
@@ -123,6 +134,7 @@ const getContainerItems = () => {
       : null);
 };
 
+// Seçilen firmaya ait inputların listelenmesi
 const integrationsEvents = () => {
   const integrations = document.getElementsByClassName("list__item");
   Array.from(integrations).forEach((element) => {
@@ -137,7 +149,7 @@ const integrationsEvents = () => {
             break;
           case "yemek-sepeti":
             setConditionalFields(yemekSepetiHtml);
-            // Password show toggle
+            // Şifrenin kapatılıp açılması
             document.getElementById("visibility").addEventListener("click", (event) => {
               const inputPassword = document.getElementById("password");
               if (inputPassword.type === "password") {
@@ -179,24 +191,6 @@ const setButtonClass = () => {
     button.disabled = false;
   }, 3000);
 };
-
-// TODO: password toggle visibilty
-// if (visibility) {
-//   console.log("geldi");
-//   visibility.addEventListener("click", (event) => {
-//     if (inputPassword.type === "password") {
-//       inputPassword.type = "text";
-//     } else {
-//       inputPassword.type = "password";
-//     }
-
-//     if (event.target.innerHTML === "visibility") {
-//       event.target.innerHTML = "visibility_off";
-//     } else {
-//       event.target.innerHTML = "visibility";
-//     }
-//   });
-// }
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();

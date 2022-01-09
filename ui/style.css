@@ -103,11 +103,13 @@ form {
 .input__label {
   position: absolute;
   left: 16px;
-  top: 13px;
+  top: 15px;
   background-color: #ffffff;
   border-radius: 8px;
   padding: 0 8px;
-  font-size: 12px;
+  -webkit-transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  font-size: 14px;
   color: #b0b6bc;
 }
 
@@ -124,7 +126,7 @@ form {
 }
 
 .input__field:focus ~ .input__label,
-.input__label {
+.input__field:not(:placeholder-shown).input__field:not(:focus) ~ .input__label {
   top: -0.5rem;
   font-size: 0.8rem;
   left: 0.8rem;
@@ -257,8 +259,8 @@ input[type="radio"]:checked + div span::after {
   font-size: 18px;
   color: #ff937d;
   cursor: pointer;
-  -webkit-transition: background-color 500ms ease-in;
-  transition: background-color 500ms ease-in;
+  -webkit-transition: all 500ms ease-in;
+  transition: all 500ms ease-in;
 }
 
 .btn-completed {
